@@ -58,9 +58,9 @@ To ensure the KNN algorithm treats all features fairly, specific mathematical tr
 
 ### 3. Model Implementation: K-Nearest Neighbors
 
-The system uses an **unsupervised KNN approach** to measure the "distance" between books.
+The system uses an **unsupervised KNN approach** to measure the "distance" between books in a feature space defined by rating, length, and engagement.
 
-* **Metric:** Euclidean distance in a feature space defined by rating, length, and engagement.
+* **Metric: Cosine Similarity** – While Euclidean distance measures the straight-line gap between points, I chose Cosine Similarity to measure the angle between vectors. This ensures that a book's "popularity" (magnitude) doesn't overshadow its actual "content similarity."
 * **The Logic:** When a book title is queried, the model calculates the distance to every other book. The "Nearest Neighbors" are the titles with the smallest mathematical gap from the input.
 * **Handling Sparsity:** By encoding categorical features like authors, the model can recommend books that are contextually and statistically similar even when direct user overlap is low.
 
